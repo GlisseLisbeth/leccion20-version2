@@ -1,0 +1,360 @@
+html{
+  box-sizing: border-box;
+}
+
+*, *.before, *:after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Palatino Linotype", "Book Antiqua", "Arial", sans-serif;
+  background: rgb(204,255,204);
+}
+
+header{
+  position: relative;
+}
+/*Menu hamburguer*/
+nav{
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  height: 90px;
+  z-index: 1000;
+  margin-top: 0;
+  position: fixed;
+  padding-top: 0px;
+  background: #F9A91A;
+  transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+
+nav .nav-background{
+  top: 0px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1500;
+  display: table;
+  background: none;
+  position: absolute;
+  transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+
+nav.open .nav-background{
+  opacity: 1;
+  background-color: rgba(217,40,130,0.9) !important;
+  transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+
+nav.open{
+  height: 100%;
+  transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+nav ul{
+  top: -10%;
+  padding: 0;
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  display: table-cell;
+  vertical-align: middle;
+  transform: perspective(600px) rotateX(10deg);
+  transition: all 0.5s cubic-bezier(0.7, 0, 0.36, 0.63);
+}
+
+nav ul li{
+  visibility: hidden;
+}
+
+nav ul li a{
+  width: 100%;
+  color: white;
+  display: block;
+  padding: 8px 0 0;
+  text-decoration: none;
+  letter-spacing: -0.06em;
+}
+
+nav ul li a:hover{
+  color: #ec008c;
+  background-color: white;
+}
+
+nav.open ul{
+  top: 0;
+  opacity: 1;
+  margin-top: 0;
+  visibility: visible;
+  transform: perspective(600px) rotateX(0deg);
+}
+nav.open ul li{
+  color: #fff;
+  font-size: 60px;
+  visibility: visible !important;
+}
+
+nav.header-in{
+  background-color: rgba(249, 169, 26, 0.8);
+}
+
+.logo, .menu{
+  z-index: 2000;
+  position: absolute;
+}
+
+.logo{
+  left: 0;
+  top: 4px;
+  width: 222px;
+  height: 74px;
+  padding: 0.4% 2%;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.image{
+  background-image: url(../img/icon/laboratoria.svg);
+}
+
+.menu{
+  top: 0;
+  right: 0;
+  height: 3px;
+  width:  24px;
+  z-index: 2000;
+  text-align: right;
+  margin: 2rem 2rem;
+  position: absolute;
+  background: #ffffcc;
+  transition: all 0.3s;
+}
+
+.menu:before, .menu:after{
+  content: '';
+  height: 3px;
+  z-index: -1;
+  width:  24px;
+  display: block;
+  position: absolute;
+  background: #ffffcc;
+  transition: all 0.3s;
+}
+
+.menu:before{
+  top: -8px;
+}
+
+.menu:after{
+  top: 8px;
+}
+
+#toggle:hover:before{
+  top: 9px;
+}
+
+#toggle:hover:after{
+  top: -9px;
+}
+
+#toggle:hover {
+  transition: top 0.4s;
+  cursor: pointer;
+}
+
+.open .menu{
+  background: none !important;
+}
+
+.open .menu:after{
+  top: 0 !important;
+  transform: rotate(45deg);
+  background: #fff !important;
+}
+
+.open .menu:before{
+  top: 0 !important;
+  transform: rotate(-45deg);
+  background: #fff !important;
+}
+
+.solid #toggle .menu{
+  background: #fff;
+}
+
+.solid #toggle .menu:after{
+  background-color: #fff;
+}
+
+.solid #toggle .menu:before{
+  background-color: #fff;
+}
+
+nav.solid #logo .logo{
+  background-image: transparent;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+/*Grid*/
+.center span{
+  left: 7px;
+  opacity: 0;
+  top: 60%;
+  color: white;
+  font-size: 25px;
+  font-weight: 100;
+  position: absolute;
+  word-spacing: 100vw;
+  letter-spacing: 1vw;
+  z-index: 2;
+}
+
+.grid:hover figure .center span{
+  opacity: 1;
+  transition: background-color 0.8s ease;
+}
+
+.border-bottom-content{
+  width: 10%;
+  border-bottom: 3px solid gold;
+}
+
+h2{
+  color:  #999999;
+  text-align: left;
+  font-weight: 100;
+  text-shadow: 1px 1px #999966;
+}
+
+.content{
+  height: 100%;
+  display: block;
+  padding: 0px 8%;
+  text-align: center;
+}
+
+.list-unstyled{
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+.box{
+  float: left;
+  width: 290px;
+  height: 290px;
+  margin: 0px 0px;
+  position: relative;
+}
+
+.img-box{
+  z-index: -1000;
+  width: 290px;
+  height: 290px;
+  position: relative;
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+
+.grid:hover figure .img-box{
+  transform: scale(1.05);
+  width: 290px;
+  height: 290px;
+}
+
+.grid:hover{
+  background: rgba(249, 169, 26, 0.8);
+  transition: background-color 0.8s ease;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  width: 290px;
+  height: 290px;
+  overflow: hidden;
+}
+
+/*section*/
+section{
+  position: relative;
+}
+/*footer*/
+footer{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #fff;
+  height: 70px;
+  text-align: right;
+  position: absolute;
+  background: #F9A91A;
+}
+
+footer h5{
+  line-height: 70px;
+  margin: 0px 20px 0px 0px;
+}
+
+/*typer*/
+#header-typer{
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #F9A91A;
+  margin: 90px 0;
+}
+
+.var-highlight{
+    color: #10069f;
+}
+.string-highlight{
+    color: rgba(249, 66, 58, 0.8);
+}
+
+.string-highlight2{
+    color: rgba(0, 176, 139, 0.8);
+}
+
+#typewriter{
+  font-size: 5em;
+  margin: 0px -250px;
+  padding-top: 100px;
+  font-family: "Courier New";
+  width: 100%;
+
+}
+
+#typewriter:after{
+  content: "|";
+  animation: blink 500ms linear infinite alternate;
+}
+
+
+@-webkit-keyframes blink{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@-moz-keyframes blink{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
